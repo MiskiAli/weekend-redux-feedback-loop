@@ -24,10 +24,11 @@ function FeelingList(){
     return(
         <>
         <h3>How are you feeling today?</h3>
+        <p>Feeling?</p>
         <form onSubmit={handleSubmit}>
         <input 
-        type= "text"
-        placeholder="Feeling?"
+        type= "number"
+        placeholder="Add here"
         value={newFeeling}
         onChange={event => setNewFeeling(event.target.value)}
         />
