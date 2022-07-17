@@ -31,9 +31,9 @@ const handleSubmit = (event)=>{
         <>
         <div>
             <h4>Feeling: {feelingList}</h4>
-            <h4>Feeling: {understandingForm}</h4>
-            <h4>Feeling: {supportForm}</h4>
-            <h4>Feeling: {commentsForm}</h4>
+            <h4> Understanding: {understandingForm}</h4>
+            <h4>Support: {supportForm}</h4>
+            <h4>Comment: {commentsForm}</h4>
         </div>
 
         <div onSubmit={handleSubmit}>

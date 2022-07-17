@@ -24,11 +24,11 @@ function CommentsForm(){
             history.push('/comments')
         }
         else{
-            history.push('/comments') 
+            history.push('/review') 
         }
     }
 const handleBackButton = () => {
-    history.push('/ support')
+    history.push('/support')
 }
 
     return(
