@@ -8,7 +8,7 @@ function FeelingList(){
     // const feelingList = useSelector (store => store.feelingList);
     
     const dispatch = useDispatch();
-    
+
     const handleSubmit = event => {
     event.preventDefault();
     
@@ -19,14 +19,15 @@ function FeelingList(){
     
         setNewFeeling('')
     }
-        
+    
 
     return(
         <>
+        <h3>How are you feeling today?</h3>
         <form onSubmit={handleSubmit}>
         <input 
         type= "text"
-        placeholder="Rate Your Feeling"
+        placeholder="Feeling?"
         value={newFeeling}
         onChange={event => setNewFeeling(event.target.value)}
         />

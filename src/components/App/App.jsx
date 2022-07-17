@@ -14,6 +14,9 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 function App() {
 
   const feelingList = useSelector (store => store.feelingList);
+  const understandingList = useSelector (store => store.understandingList);
+  const supportList = useSelector (store => store.supportList);
+  const commentList = useSelector (store => store.commentList);
 
   // const count = useSelector(store => store.count); 
 const dispatch= useDispatch();
@@ -32,6 +35,7 @@ const getFeelingList = () =>{
     console.log('error in getFeelingList', getFeelingList)
   })
 }
+
 //  useEffect
 useEffect(()=>{
   getFeelingList();

@@ -11,26 +11,26 @@ import registerServiceWorker from "./registerServiceWorker";
 // Set Up Reducers
 
 const feelingList = (state = [], action) => {
-  switch (action.type) {
+switch (action.type) {
     case "GET_FEELING_LIST":
-      return action.payload;
+    return action.payload;
     default:
-      return state;
-  }
+    return state;
+}
 };
 
 const storeInstance = createStore(
-  combineReducers({
+combineReducers({
     // reducers here
     feelingList,
-  }),
-  applyMiddleware(logger)
+}),
+applyMiddleware(logger)
 );
 
 ReactDOM.render(
-  <Provider store={storeInstance}>
+<Provider store={storeInstance}>
     <App />
-  </Provider>,
-  document.getElementById("root")
+</Provider>,
+document.getElementById("root")
 );
 registerServiceWorker();
