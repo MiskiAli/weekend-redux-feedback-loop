@@ -33,11 +33,11 @@ const handleBackButton = () => {
 
     return(
         <>
-<h3>How well are you being supported?</h3>
+<h3>Any comments?</h3>
 
 <form onSubmit={handleComments}>
 <input 
-type= "number"
+type= "text"
 placeholder="Add Here"
 value={newComments}
 onChange={event => setNewComments(event.target.value)}

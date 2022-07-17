@@ -31,8 +31,7 @@ const handleBackButton = () => {
 }
     return(
         <>
-        <h3>How well are you being supported?</h3>
-
+<h3>How well is your understanding?</h3>
 <form onSubmit={handleUnderstanding}>
 <input 
 type= "number"

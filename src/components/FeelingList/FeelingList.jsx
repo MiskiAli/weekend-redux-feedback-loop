@@ -32,18 +32,26 @@ function FeelingList(){
 
     const getFeelingList = event => {
     event.preventDefault();
-    
+    console.log('feeling is :', newFeeling  )
         dispatch({
         type: 'GET_FEELING_LIST',
         payload: newFeeling
         });
-        history.push('/UnderstandingForm')
+        // history.push('/UnderstandingForm')
         
+        if (newFeeling === ''){
+            history.push('/')
+        }
+        else{
+            history.push('/understanding')
+        }
+
     }
     
 
     return(
         <>
+
         <h3>How are you feeling today?</h3>
         <p>Feeling?</p>
         <form onSubmit={getFeelingList}>
