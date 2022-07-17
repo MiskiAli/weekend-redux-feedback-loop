@@ -15,11 +15,6 @@ import ReviewForm from '../Review/Review';
 
 function App() {
 
-
-//   // const count = useSelector(store => store.count); 
-// const dispatch= useDispatch();
-
-
 // // GET feelings
 // const getFeelingList = () =>{
 //   axios.get('/')
@@ -34,23 +29,38 @@ function App() {
 //   })
 // }
 
-// //  useEffect
-// useEffect(()=>{
-//   getFeelingList();
-// }, [])
 
   return (
+    
+<Router>
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <div>
+      
       <Route exact path='/'>
       <FeelingList />
       </Route>
-      </div>
+      
+      <Route exact path='/understanding'>
+      <UnderstandingForm />
+      </Route>
+
+      <Route exact path='/support'>
+      <SupportForm />
+    </Route>
+
+    <Route exact path='/comments'>
+      <CommentsForm />
+    </Route>
+
+    <Route exact path='/review'>
+      <ReviewForm />
+    </Route>
     </div>
+</Router>
+
   );
 }
 
