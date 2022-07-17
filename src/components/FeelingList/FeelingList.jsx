@@ -8,6 +8,7 @@ function FeelingList(){
     // const feelingList = useSelector (store => store.feelingList);
     
     const dispatch = useDispatch();
+    
     const handleSubmit = event => {
     event.preventDefault();
     
