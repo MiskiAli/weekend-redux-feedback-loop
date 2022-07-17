@@ -7,9 +7,9 @@ import { useHistory } from 'react-router-dom';
 function ReviewForm(){
 // put useSelectors here 
 const feelingList = useSelector (store => store.feelingList);
-const understandingForm = useSelector (store => store.understandingForm);
-const supportForm = useSelector (store => store.supportForm);
-const commentsForm = useSelector (store => store.commentsForm);
+const understandingForm = useSelector (store => store.understandingReducer);
+const supportForm = useSelector (store => store.supportReducer);
+const commentsForm = useSelector (store => store.commentsReducer);
 
 
 const feedback = {
