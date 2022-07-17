@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
-// const router = express.Router();
-const Feedbackrouter = require('./Routes/Feedback.router.js')
+// const feedbackRouter= require('./routes/feedback.router.js')
 
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -22,7 +21,7 @@ app.use(express.static('build'));
 //         res.sendStatus(500);
 //     });
 // })
-app.use('/feeling', Feedbackrouter);
+// app.use('/feedback', feedbackRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

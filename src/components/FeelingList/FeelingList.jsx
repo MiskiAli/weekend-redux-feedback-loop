@@ -1,23 +1,44 @@
 import axios from 'axios'
 import {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 
 function FeelingList(){
     const [newFeeling, setNewFeeling] = useState('');
-
-    // const feelingList = useSelector (store => store.feelingList);
-    
     const dispatch = useDispatch();
+    const history = useHistory();
+  // const count = useSelector(store => store.count); 
 
-    const handleSubmit = event => {
+  // GET feelings
+// const getFeelingList = () =>{
+//     axios.get('/')
+//     .then(response => {
+//     dispatch({
+//         type: 'GET_FEELING_LIST',
+//         payload: response.data
+//     })
+//     history.push('/UnderstandingForm')
+//     console.log(respone.data)
+//     }).catch((error)=>{
+//     console.log('error in getFeelingList', getFeelingList)
+//     })
+// }
+
+//   //  useEffect
+// useEffect(()=>{
+//     getFeelingList();
+// }, [])
+
+    const getFeelingList = event => {
     event.preventDefault();
     
         dispatch({
-        type: 'ADD_FEELING',
+        type: 'GET_FEELING_LIST',
         payload: newFeeling
         });
-    
-        setNewFeeling('')
+        history.push('/UnderstandingForm')
+        
     }
     
 
@@ -25,7 +46,7 @@ function FeelingList(){
         <>
         <h3>How are you feeling today?</h3>
         <p>Feeling?</p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={getFeelingList}>
         <input 
         type= "number"
         placeholder="Add here"

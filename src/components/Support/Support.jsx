@@ -21,14 +21,14 @@ function SupportForm (){
         
         
         if (newSupport === ''){
-            history.push('/Support')
+            history.push('/support')
         }
         else{
-            history.push('/Comments')
+            history.push('/comments')
         }
     }
 const handleBackButton = () => {
-    history.push('/Understanding')
+    history.push('/understanding')
 }
 
 
