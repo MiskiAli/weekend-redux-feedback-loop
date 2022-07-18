@@ -2,20 +2,8 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-// GET
-
-// router.get('/', (req, res) => {
-//     console.log('GET /feeling');
-//     pool.query('SELECT * from "feeling";').then((result) => {
-//         res.send(result.rows);
-//     }).catch((error) => {
-//         console.log('Error GET /api/feeling', error)
-//         res.sendStatus(500);
-//     });
-// })
-
 // POST
-router.post('/', async (req, res) => {
+router.post('/', (req, res) => {
     const addFeedback = req.body;
     console.log(req.body);
 
@@ -24,8 +12,8 @@ router.post('/', async (req, res) => {
 
     const sqlValue= [addFeedback.feeling, addFeedback.understanding, addFeedback.support, addFeedback.comments]
 
-pool.query(sqlText, sqlValue).then((database)=>{
-    console.log('adding to database!', database);
+pool.query(sqlText, sqlValue).then((result) => {
+    console.log('adding to database!', result);
     res.send(201)
 }).catch ((error)=> {
         console.log('Error POST problem adding to database!', error);
@@ -35,3 +23,4 @@ pool.query(sqlText, sqlValue).then((database)=>{
 
 
 module.exports = router;
+
