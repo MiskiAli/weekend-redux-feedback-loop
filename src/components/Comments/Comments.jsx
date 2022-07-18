@@ -20,12 +20,9 @@ function CommentsForm(){
             setNewComments('')
         
         
-        if (newComments === ''){
-            history.push('/comments')
-        }
-        else{
+      
             history.push('/review') 
-        }
+        
     }
 const handleBackButton = () => {
     history.push('/support')
