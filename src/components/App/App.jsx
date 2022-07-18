@@ -12,7 +12,7 @@ import UnderstandingForm from '../Understanding/Understanding';
 import SupportForm from '../Support/Support';
 import CommentsForm from '../Comments/Comments'
 import ReviewForm from '../Review/Review';
-
+import ThankYou from '../ThankYou/ThankYou';
 function App() {
 
 // // GET feelings
@@ -58,6 +58,11 @@ function App() {
     <Route exact path='/review'>
       <ReviewForm />
     </Route>
+
+    <Route exact path='/thankyou'>
+      <ThankYou />
+    </Route>
+    
     </div>
 </Router>
 
