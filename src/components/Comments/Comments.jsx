@@ -20,7 +20,6 @@ function CommentsForm(){
             setNewComments('')
         
         
-      
             history.push('/review') 
         
     }

@@ -12,15 +12,25 @@ const supportForm = useSelector (store => store.supportReducer);
 const commentsForm = useSelector (store => store.commentsReducer);
 const history = useHistory();
 
+let addFeedback={
+    feelingList,
+    understandingForm,
+    supportForm,
+    commentsForm,
+    history
+};
+
 
 // handleSubmit / POST goes here to add this data to the server
 const handleSubmit = (event)=>{
     event.preventDefault(); //this makes the button do the thing
-    axios({ method: 'POST', url: '/feedback'}) // goes to the url in the server.js but its not working properly.
+    axios({ 
+    method: 'POST',
+    url: '/feedback', addFeedback 
+}) // goes to the url in the server.js but its not working properly.
     .then((response)=>{
         console.log('in the review components post', response)
         // history.push('/thankyou')
-
     }).catch((error)=>{ console.log('error in the review components post', error) })
     // history.push('/thankyou')
         history.push('/thankyou') 
@@ -37,9 +47,9 @@ const handleSubmit = (event)=>{
             <h4>Comment: {commentsForm}</h4>
         </div>
 
-        <div onSubmit={handleSubmit}>
-            <button>Submit</button>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <button type= 'submit'>Submit</button>
+        </form>
         </>
     )
 }
